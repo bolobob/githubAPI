@@ -1,0 +1,11 @@
+#content {
+    min-height: 450px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 70px;
+    border-top: 1px solid hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 96%);
+}
