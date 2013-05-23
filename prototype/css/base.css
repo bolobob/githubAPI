@@ -1,4 +1,6 @@
-#content {
+#canvas {
+    position: relative;
+    top: 41px;
     min-height: 450px;
 }
 
