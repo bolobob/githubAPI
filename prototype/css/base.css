@@ -1,7 +1,12 @@
 #canvas {
+    fill: #333;
     position: relative;
     top: 41px;
     min-height: 450px;
+}
+
+text tspan {
+    text-shadow: 1px 1px 1px;
 }
 
 .footer {
