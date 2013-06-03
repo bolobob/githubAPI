@@ -8,19 +8,28 @@ $(function() {
 
     init: function() {
       this.cacheElements();
+      this.bindEvents();
+    },
 
+    cacheElements: function() {
+      this.canvas = SVG('canvas').size('100%', '100%');
+      this.search_form = $('#search-form');
+      this.search_btn = $('#search-btn');
+    },
+
+    bindEvents: function() {
+      this.search_btn.on('click', this.fetch);
+    },
+
+    fetch: function(event) {
       $.ajax({
         type: 'GET',
-        url: this.base_url + 'bolobob',
+        url: App.base_url + App.search_form.val(),
         dataType: 'json',
         success: function(data, textStatus, jqXHR) {
           App.renderUser(data);
         }
       });
-    },
-
-    cacheElements: function() {
-      this.canvas = SVG('canvas').size('100%', '100%');
     },
 
     renderUser: function(data) {
