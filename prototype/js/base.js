@@ -33,6 +33,9 @@ $(function() {
     },
 
     renderUser: function(data) {
+      // キャンバスを全てクリア
+      this.canvas.clear();
+
       // 円の影
       this.gradient = this.canvas.gradient('radial', function(stop) {
                        stop.at({offset: 70, color: '#333', opacity: 1});
