@@ -28,6 +28,7 @@ $(function() {
         dataType: 'json',
         success: function(data, textStatus, jqXHR) {
           App.renderUser(data);
+          App.renderFollowing(data);
         }
       });
     },
@@ -50,6 +51,17 @@ $(function() {
       // マスキング
       var ellipse = this.canvas.ellipse(60, 60).move(110, 110).fill({ color: '#fff' });
       this.avatar.clipWith(ellipse);
+    },
+
+    renderFollowing: function(data) {
+      $.ajax({
+        type: 'GET',
+        url: data.following_url.split('{', 1)[0],
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR) {
+          console.log(data);
+        }
+      });
     }
   };
 
