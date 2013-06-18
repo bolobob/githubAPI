@@ -1,0 +1,3 @@
+[submodule "prototype/svg"]
+	path = prototype/svg
+	url = https://github.com/wout/svg.js.git
