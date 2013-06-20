@@ -21,10 +21,18 @@ $(function() {
     },
 
     bindEvents: function() {
+      this.search_form.focus();
+      this.search_form.on('keypress', this.fetch);
       this.search_btn.on('click', this.fetch);
     },
 
     fetch: function(event) {
+      if (event.keyCode !== 13) {
+        return;
+      }
+
+      event.preventDefault();
+
       $.ajax({
         type: 'GET',
         url: App.base_url + App.search_form.val(),
