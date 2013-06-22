@@ -13,13 +13,21 @@
   <body>
     <div id="header" class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-	<a class="brand" herf="/">Github API を使ってなんかやる！</a>
-	<form class="navbar-search pull-right" action="">
-	  <div class="input-append">
-            <input id="search-form" type="text" class="span3" placeholder="Input your github username" value="bolobob">
-	    <button id="search-btn" class="btn" type="button">Search</button>
+	<div class="container-fluid">
+	  <a class="brand" herf="/">Github API を使ってなんかやる！</a>
+	  <div class="nav-collapse collapse navbar-inverse-collapse">
+	    <ul class="nav pull-right">
+	      <li>
+		<form class="navbar-search pull-left" action="">
+		  <input id="search-form" type="text" class="search-query span3" placeholder="Input your github username" value="bolobob">
+		  <i class="icon-search"></i>
+		</form>
+	      </li>
+              <li class="divider-vertical"></li>
+              <li><a id="login" href="#">ログイン</a></li>
+            </ul>
 	  </div>
-	</form>
+	</div>
       </div>
     </div>
     <div id="canvas">
