@@ -16,15 +16,22 @@ $(function() {
     },
 
     cacheElements: function() {
+      this.$login = $('#login');
       this.canvas = SVG('canvas').size('100%', '100%');
       this.search_form = $('#search-form');
       this.search_btn = $('#search-btn');
     },
 
     bindEvents: function() {
+      this.$login.popover(this.popover_options);
       this.search_form.focus();
       this.search_form.on('keypress', this.fetch);
       this.search_btn.on('click', this.fetch);
+    },
+
+    popover_options: {
+      content: ' ',
+      placement: 'bottom'
     },
 
     fetch: function(event) {
