@@ -109,7 +109,12 @@ $(function() {
       this.g.add(this.name);
     };
 
+    this.fetch_followers = function() {
+
+    };
+
     this.render();
+    this.fetch_followers();
   };
   App.Following.WIDTH  = 80;
   App.Following.HEIGHT = 80;
