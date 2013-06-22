@@ -6,6 +6,7 @@ $(function() {
   var App = App || {};
 
   App = {
+    ENTER_KEY: 13,
     base_url: 'https://api.github.com/users/',
     following: [],
 
@@ -27,7 +28,7 @@ $(function() {
     },
 
     fetch: function(event) {
-      if (event.keyCode !== 13) {
+      if (event.keyCode !== App.ENTER_KEY) {
         return;
       }
 
