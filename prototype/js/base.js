@@ -30,7 +30,8 @@ $(function() {
     },
 
     popover_options: {
-      content: ' ',
+      html: true,
+      content: _.template($('#login_form').html()),
       placement: 'bottom'
     },
 

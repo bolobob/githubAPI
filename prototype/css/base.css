@@ -3,6 +3,9 @@
     top: 8px;
     right: 8px;
 }
+#header .popover.bottom .arrow {
+    left: 80%;
+}
 
 #canvas {
     fill: #333;
