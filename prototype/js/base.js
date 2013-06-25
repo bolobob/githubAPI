@@ -16,14 +16,15 @@ $(function() {
     },
 
     cacheElements: function() {
-      this.$login = $('#login');
-      this.canvas = SVG('canvas').size('100%', '100%');
-      this.search_form = $('#search-form');
-      this.search_btn = $('#search-btn');
+      this.$login_menu   = $('#login');
+      this.canvas        = SVG('canvas').size('100%', '100%');
+      this.search_form   = $('#search-form');
+      this.search_btn    = $('#search-btn');
     },
 
     bindEvents: function() {
-      this.$login.popover(this.popover_options);
+      this.$login_menu.popover(this.popover_options);
+      this.$login_menu.on('click', this.clickLoginMenu);
       this.search_form.focus();
       this.search_form.on('keypress', this.fetch);
       this.search_btn.on('click', this.fetch);
@@ -33,6 +34,16 @@ $(function() {
       html: true,
       content: _.template($('#login_form').html()),
       placement: 'bottom'
+    },
+
+    clickLoginMenu: function() {
+      App.$login_button = $('#login_button');
+      App.$login_button.on('click', App.login);
+    },
+
+    login: function(event) {
+      event.preventDefault();
+      console.log(this);
     },
 
     fetch: function(event) {
