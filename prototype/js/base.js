@@ -43,7 +43,21 @@ $(function() {
 
     login: function(event) {
       event.preventDefault();
-      console.log(this);
+      $.ajax({
+        url: 'https://api.github.com/authorizations',
+        success: function(data, textStatus, jqXHR) {
+          if (jqXHR.status === 200) {
+            App.$login_menu.find('a').text($('#login_name').val());
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR, textStatus, errorThrown);
+        },
+        beforeSend: function(jqXHR) {
+          var credentials = $.base64.encode($('#login_name').val() + ':' + $('#login_password').val());
+          jqXHR.setRequestHeader('Authorization', 'Basic ' + credentials);
+        }
+      });
     },
 
     fetch: function(event) {
